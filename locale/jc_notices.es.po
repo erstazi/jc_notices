@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "Publicado: @1"
+
+msgid "Posted by: @1"
+msgstr "Publicado por: @1"
+
+msgid "Modified: @1"
+msgstr "Modificado: @1"
+
+msgid "Modified by: @1"
+msgstr "Modificado por: @1"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Back"
+msgstr "Volver"
+
+msgid "Translating Text"
+msgstr "Traduciendo texto"
+
+msgid "Notices"
+msgstr "Avisos"
+
+msgid "View Notice"
+msgstr "Ver aviso"
+
+msgid "There are no notices."
+msgstr "No hay avisos."
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Add Notice"
+msgstr "Agregar aviso"
+
+msgid "Notice not found."
+msgstr "Aviso no encontrado."
+
+msgid "Delete Notice"
+msgstr "Eliminar aviso"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "¿Seguro que quieres eliminar este aviso?"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Edit Notice"
+msgstr "Editar aviso"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Notice deleted."
+msgstr "Aviso eliminado."
+
+msgid "A notice title is required."
+msgstr "Se requiere un título para el aviso."
+
+msgid "A notice description is required."
+msgstr "Se requiere una descripción para el aviso."
+
+msgid "Notice added."
+msgstr "Aviso agregado."
+
+msgid "Notice updated."
+msgstr "Aviso actualizado."
+
+msgid "View server notices."
+msgstr "Ver los avisos del servidor."

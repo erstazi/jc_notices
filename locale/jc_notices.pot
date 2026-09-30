@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr ""
+
+msgid "Posted by: @1"
+msgstr ""
+
+msgid "Modified: @1"
+msgstr ""
+
+msgid "Modified by: @1"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Translating Text"
+msgstr ""
+
+msgid "Notices"
+msgstr ""
+
+msgid "View Notice"
+msgstr ""
+
+msgid "There are no notices."
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Add Notice"
+msgstr ""
+
+msgid "Notice not found."
+msgstr ""
+
+msgid "Delete Notice"
+msgstr ""
+
+msgid "Are you sure you want to delete this notice?"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Edit Notice"
+msgstr ""
+
+msgid "Add Notice"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Notice deleted."
+msgstr ""
+
+msgid "A notice title is required."
+msgstr ""
+
+msgid "A notice description is required."
+msgstr ""
+
+msgid "Notice added."
+msgstr ""
+
+msgid "Notice updated."
+msgstr ""
+
+msgid "View server notices."
+msgstr ""

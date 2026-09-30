@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "发布于：@1"
+
+msgid "Posted by: @1"
+msgstr "发布者：@1"
+
+msgid "Modified: @1"
+msgstr "修改于：@1"
+
+msgid "Modified by: @1"
+msgstr "修改者：@1"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Back"
+msgstr "返回"
+
+msgid "Translating Text"
+msgstr "正在翻译文本"
+
+msgid "Notices"
+msgstr "公告"
+
+msgid "View Notice"
+msgstr "查看公告"
+
+msgid "There are no notices."
+msgstr "没有公告。"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Add Notice"
+msgstr "添加公告"
+
+msgid "Notice not found."
+msgstr "未找到公告。"
+
+msgid "Delete Notice"
+msgstr "删除公告"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "确定要删除此公告吗？"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Edit Notice"
+msgstr "编辑公告"
+
+msgid "Title"
+msgstr "标题"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Notice deleted."
+msgstr "公告已删除。"
+
+msgid "A notice title is required."
+msgstr "公告标题不能为空。"
+
+msgid "A notice description is required."
+msgstr "公告描述不能为空。"
+
+msgid "Notice added."
+msgstr "公告已添加。"
+
+msgid "Notice updated."
+msgstr "公告已更新。"
+
+msgid "View server notices."
+msgstr "查看服务器公告。"

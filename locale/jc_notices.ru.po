@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "Опубликовано: @1"
+
+msgid "Posted by: @1"
+msgstr "Опубликовал: @1"
+
+msgid "Modified: @1"
+msgstr "Изменено: @1"
+
+msgid "Modified by: @1"
+msgstr "Изменил: @1"
+
+msgid "Edit"
+msgstr "Изменить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Translating Text"
+msgstr "Перевод текста"
+
+msgid "Notices"
+msgstr "Объявления"
+
+msgid "View Notice"
+msgstr "Просмотреть объявление"
+
+msgid "There are no notices."
+msgstr "Объявлений нет."
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Add Notice"
+msgstr "Добавить объявление"
+
+msgid "Notice not found."
+msgstr "Объявление не найдено."
+
+msgid "Delete Notice"
+msgstr "Удалить объявление"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "Вы уверены, что хотите удалить это объявление?"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Edit Notice"
+msgstr "Изменить объявление"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Notice deleted."
+msgstr "Объявление удалено."
+
+msgid "A notice title is required."
+msgstr "Требуется заголовок объявления."
+
+msgid "A notice description is required."
+msgstr "Требуется описание объявления."
+
+msgid "Notice added."
+msgstr "Объявление добавлено."
+
+msgid "Notice updated."
+msgstr "Объявление обновлено."
+
+msgid "View server notices."
+msgstr "Просмотреть объявления сервера."

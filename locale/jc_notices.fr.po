@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "Publié : @1"
+
+msgid "Posted by: @1"
+msgstr "Publié par : @1"
+
+msgid "Modified: @1"
+msgstr "Modifié : @1"
+
+msgid "Modified by: @1"
+msgstr "Modifié par : @1"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "Translating Text"
+msgstr "Traduction du texte"
+
+msgid "Notices"
+msgstr "Avis"
+
+msgid "View Notice"
+msgstr "Voir l’avis"
+
+msgid "There are no notices."
+msgstr "Il n’y a aucun avis."
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Add Notice"
+msgstr "Ajouter un avis"
+
+msgid "Notice not found."
+msgstr "Avis introuvable."
+
+msgid "Delete Notice"
+msgstr "Supprimer l’avis"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "Voulez-vous vraiment supprimer cet avis ?"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Edit Notice"
+msgstr "Modifier l’avis"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Notice deleted."
+msgstr "Avis supprimé."
+
+msgid "A notice title is required."
+msgstr "Un titre est requis pour l’avis."
+
+msgid "A notice description is required."
+msgstr "Une description est requise pour l’avis."
+
+msgid "Notice added."
+msgstr "Avis ajouté."
+
+msgid "Notice updated."
+msgstr "Avis mis à jour."
+
+msgid "View server notices."
+msgstr "Voir les avis du serveur."

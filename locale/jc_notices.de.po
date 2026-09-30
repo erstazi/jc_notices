@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: de\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "Veröffentlicht: @1"
+
+msgid "Posted by: @1"
+msgstr "Veröffentlicht von: @1"
+
+msgid "Modified: @1"
+msgstr "Geändert: @1"
+
+msgid "Modified by: @1"
+msgstr "Geändert von: @1"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "Translating Text"
+msgstr "Text wird übersetzt"
+
+msgid "Notices"
+msgstr "Hinweise"
+
+msgid "View Notice"
+msgstr "Hinweis anzeigen"
+
+msgid "There are no notices."
+msgstr "Es gibt keine Hinweise."
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Add Notice"
+msgstr "Hinweis hinzufügen"
+
+msgid "Notice not found."
+msgstr "Hinweis nicht gefunden."
+
+msgid "Delete Notice"
+msgstr "Hinweis löschen"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "Möchtest du diesen Hinweis wirklich löschen?"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Edit Notice"
+msgstr "Hinweis bearbeiten"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Notice deleted."
+msgstr "Hinweis gelöscht."
+
+msgid "A notice title is required."
+msgstr "Ein Hinweis-Titel ist erforderlich."
+
+msgid "A notice description is required."
+msgstr "Eine Hinweisbeschreibung ist erforderlich."
+
+msgid "Notice added."
+msgstr "Hinweis hinzugefügt."
+
+msgid "Notice updated."
+msgstr "Hinweis aktualisiert."
+
+msgid "View server notices."
+msgstr "Serverhinweise anzeigen."

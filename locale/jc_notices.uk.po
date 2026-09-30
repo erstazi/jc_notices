@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "Опубліковано: @1"
+
+msgid "Posted by: @1"
+msgstr "Опублікував: @1"
+
+msgid "Modified: @1"
+msgstr "Змінено: @1"
+
+msgid "Modified by: @1"
+msgstr "Змінив: @1"
+
+msgid "Edit"
+msgstr "Редагувати"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Translating Text"
+msgstr "Переклад тексту"
+
+msgid "Notices"
+msgstr "Оголошення"
+
+msgid "View Notice"
+msgstr "Переглянути оголошення"
+
+msgid "There are no notices."
+msgstr "Оголошень немає."
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Add Notice"
+msgstr "Додати оголошення"
+
+msgid "Notice not found."
+msgstr "Оголошення не знайдено."
+
+msgid "Delete Notice"
+msgstr "Видалити оголошення"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "Ви впевнені, що хочете видалити це оголошення?"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Edit Notice"
+msgstr "Редагувати оголошення"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Description"
+msgstr "Опис"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Notice deleted."
+msgstr "Оголошення видалено."
+
+msgid "A notice title is required."
+msgstr "Потрібно вказати заголовок оголошення."
+
+msgid "A notice description is required."
+msgstr "Потрібно вказати опис оголошення."
+
+msgid "Notice added."
+msgstr "Оголошення додано."
+
+msgid "Notice updated."
+msgstr "Оголошення оновлено."
+
+msgid "View server notices."
+msgstr "Переглянути оголошення сервера."

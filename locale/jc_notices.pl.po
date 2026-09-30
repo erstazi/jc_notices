@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_notices\n"
+"Language: pl\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Posted: @1"
+msgstr "Opublikowano: @1"
+
+msgid "Posted by: @1"
+msgstr "Opublikowane przez: @1"
+
+msgid "Modified: @1"
+msgstr "Zmodyfikowano: @1"
+
+msgid "Modified by: @1"
+msgstr "Zmodyfikowane przez: @1"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Back"
+msgstr "Wstecz"
+
+msgid "Translating Text"
+msgstr "Tłumaczenie tekstu"
+
+msgid "Notices"
+msgstr "Ogłoszenia"
+
+msgid "View Notice"
+msgstr "Wyświetl ogłoszenie"
+
+msgid "There are no notices."
+msgstr "Brak ogłoszeń."
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Add Notice"
+msgstr "Dodaj ogłoszenie"
+
+msgid "Notice not found."
+msgstr "Nie znaleziono ogłoszenia."
+
+msgid "Delete Notice"
+msgstr "Usuń ogłoszenie"
+
+msgid "Are you sure you want to delete this notice?"
+msgstr "Czy na pewno chcesz usunąć to ogłoszenie?"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Edit Notice"
+msgstr "Edytuj ogłoszenie"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "Description"
+msgstr "Opis"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Notice deleted."
+msgstr "Ogłoszenie usunięto."
+
+msgid "A notice title is required."
+msgstr "Tytuł ogłoszenia jest wymagany."
+
+msgid "A notice description is required."
+msgstr "Opis ogłoszenia jest wymagany."
+
+msgid "Notice added."
+msgstr "Dodano ogłoszenie."
+
+msgid "Notice updated."
+msgstr "Zaktualizowano ogłoszenie."
+
+msgid "View server notices."
+msgstr "Wyświetl ogłoszenia serwera."
