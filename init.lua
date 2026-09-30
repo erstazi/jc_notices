@@ -314,8 +314,8 @@ local function show_notices(name)
       local date = format_date(notice.created or 0)
 
       formspec = formspec ..
-        "label[0.2," .. y .. ";7.2,0.7;" .. ESC(title .. " - " .. date) .. "]" ..
-        "button[7.7," .. (y - 0.08) .. ";2.5,0.6;view_notice_" .. notice.id .. ";" .. ESC( S("View Notice") ) .. "]"
+        "label[0.2," .. y .. ";7.2,0.7;" .. ESC(core.colorize("#FFFF00", date ) .. " - " .. title ) .. "]" ..
+        "button[7.7," .. (y - 0.08) .. ";2.6,0.6;view_notice_" .. notice.id .. ";" .. ESC( S("View Notice") ) .. "]"
     end
   else
     formspec = formspec
