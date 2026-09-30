@@ -138,6 +138,161 @@ local function format_date(timestamp)
   return os.date("%Y-%m-%d %H:%M", timestamp)
 end
 
+local function show_notice_formspec(name, notice, title, description)
+  local formspec = {
+    "formspec_version[6]",
+    "size[12,8]",
+    "label[0.5,0.4;" .. ESC(title or "") .. "]",
+    "label[0.5,0.9;" .. ESC( S("Posted: @1", core.colorize("#FFFF00", format_date(notice.created or 0) ) ) ) .. "]",
+    "label[0.5,1.2;" .. ESC( S("Posted by: @1", core.colorize("#00FF00", notice.created_by or "") ) ) .. "]",
+    "textarea[0.5,1.7;11,4.5;notice_description;;" .. ESC(description or "") .. "]"
+  }
+
+  if notice.modified and notice.modified ~= notice.created then
+    formspec[#formspec + 1] =
+      "label[6.0,0.9;" .. ESC( S("Modified: @1", core.colorize("#FFFF00", format_date(notice.modified)) ) ) .. "]"
+
+    formspec[#formspec + 1] =
+      "label[6.0,1.2;" .. ESC( S("Modified by: @1", core.colorize("#00FF00", notice.modified_by or "") ) ) .. "]"
+  end
+
+  if has_server_priv(name) then
+    formspec[#formspec + 1] =
+      "button[0.5,7.0;2.5,0.8;notice_edit;" .. ESC( S("Edit") ) .. "]"
+
+    formspec[#formspec + 1] =
+      "button[3.2,7.0;2.5,0.8;notice_delete;" .. ESC( S("Delete") ) .. "]"
+  end
+
+  formspec[#formspec + 1] =
+    "button[9.5,7.0;2,0.8;notice_back;" .. ESC( S("Back") ) .. "]"
+
+  core.show_formspec(
+    name,
+    "jc_notices:notice:" .. notice.id,
+    table.concat(formspec)
+  )
+end
+
+local function show_translating_notice(name)
+  local formspec = {
+    "formspec_version[6]",
+    "size[12,8]",
+    "label[4.5,3.7;" .. ESC( S("Translating Text") ) .. "]"
+  }
+
+  core.show_formspec(
+    name,
+    "jc_notices:notice_translating",
+    table.concat(formspec)
+  )
+end
+
+local function show_translated_notice(name, notice)
+  local player = core.get_player_by_name(name)
+
+  if not player then
+    return
+  end
+
+  if not jc_translate
+    or not jc_translate.detect_language
+    or not jc_translate.translate
+    or not jc_translate.get_language
+    or not jc_translate.is_enabled
+  then
+    show_notice_formspec(
+      name,
+      notice,
+      notice.title or "",
+      notice.description or ""
+    )
+    return
+  end
+
+  if not jc_translate.is_enabled(player) then
+    show_notice_formspec(
+      name,
+      notice,
+      notice.title or "",
+      notice.description or ""
+    )
+    return
+  end
+
+  local target_language = jc_translate.get_language(player)
+
+  if not target_language or target_language == "" then
+    show_notice_formspec(
+      name,
+      notice,
+      notice.title or "",
+      notice.description or ""
+    )
+    return
+  end
+
+  show_translating_notice(name)
+
+  local detection_text =
+    (notice.title or "") .. "\n" .. (notice.description or "")
+
+  jc_translate.detect_language(
+    detection_text,
+    function(source_language)
+      if not source_language or source_language == target_language then
+        show_notice_formspec(
+          name,
+          notice,
+          notice.title or "",
+          notice.description or ""
+        )
+        return
+      end
+
+      local title
+      local description
+      local title_done = false
+      local description_done = false
+
+      local function finish()
+        if not title_done or not description_done then
+          return
+        end
+
+        show_notice_formspec(
+          name,
+          notice,
+          title or notice.title or "",
+          description or notice.description or ""
+        )
+      end
+
+      jc_translate.translate(
+        notice.title or "",
+        source_language,
+        target_language,
+        function(result)
+          title = result or notice.title or ""
+          title_done = true
+          finish()
+        end
+      )
+
+      jc_translate.translate(
+        notice.description or "",
+        source_language,
+        target_language,
+        function(result)
+          description = result or notice.description or ""
+          description_done = true
+          finish()
+        end
+      )
+    end
+  )
+end
+
 local function show_notices(name)
   local notices = get_all_notices()
   local can_edit = has_server_priv(name)
@@ -146,7 +301,7 @@ local function show_notices(name)
   local scroll_max = math.max(0, math.ceil((#notices * row_height) - scroll_height))
 
   local formspec =
-      "formspec_version[4]"
+    "formspec_version[6]"
     .. "size[12,8]"
     .. "label[0.5,0.4;" .. ESC( S("Notices") ) .. "]"
     .. "box[0.4,1.0;11.2,5.9;#111111]"
@@ -171,11 +326,11 @@ local function show_notices(name)
     .. "scroll_container_end[]"
     .. "scrollbaroptions[min=0;max=" .. scroll_max .. ";smallstep=1;largestep=3]"
     .. "scrollbar[11.1,1.05;0.4,5.8;vertical;notices_scroll;0]"
-    .. "button_exit[0.5,7.1;2.5,0.8;notice_close;" .. ESC( S("Close") ) .. "]"
+    .. "button_exit[9.3,7.1;2.5,0.8;notice_close;" .. ESC( S("Close") ) .. "]"
 
   if can_edit then
     formspec = formspec ..
-      "button[3.5,7.1;2.5,0.8;notice_add;" .. ESC( S("Add Notice") ) .. "]"
+      "button[0.5,7.1;2.5,0.8;notice_add;" .. ESC( S("Add Notice") ) .. "]"
   end
 
   core.show_formspec(name, "jc_notices:notices", formspec)
@@ -187,42 +342,15 @@ local function show_notice(name, id)
   if not notice then
     core.chat_send_player(name, S("Notice not found."))
     show_notices(name)
-    return
-  end
-
-  local formspec = {
-    "formspec_version[6]",
-    "size[12,8]",
-    "label[0.5,0.4;" .. ESC(notice.title or "") .. "]",
-    "label[0.5,0.9;" .. ESC( S("Posted: @1", format_date(notice.created or 0)) ) .. "]",
-    "textarea[0.5,1.5;11,4.7;notice_description;;" .. ESC(notice.description or "") .. "]"
-  }
-
-  if notice.modified and notice.modified ~= notice.created then
-    formspec[#formspec + 1] = "label[0.5,6.2;" .. ESC( S("Modified: @1", format_date(notice.modified)) ) .. "]"
-  end
-
-  if has_server_priv(name) then
-    formspec[#formspec + 1] = "button[0.5,6.9;2.5,0.8;notice_edit;" .. ESC( S("Edit") ) .. "]"
-
-    formspec[#formspec + 1] = "button[3.2,6.9;2.5,0.8;notice_delete;" .. ESC( S("Delete") ) .. "]"
-  end
-
-  formspec[#formspec + 1] = "button[9.5,6.9;2,0.8;notice_back;" .. ESC( S("Back") ) .. "]"
-
-  core.show_formspec(name, "jc_notices:notice:" .. id, table.concat(formspec) )
-end
-
-function jc_notices.notices.show(name, id)
-  local notice = get_notice(id)
-
-  if not notice then
     return false
   end
 
-  show_notice(name, id)
-
+  show_translated_notice(name, notice)
   return true
+end
+
+function jc_notices.notices.show(name, id)
+  return show_notice(name, id)
 end
 
 local function show_delete_confirmation(name, id)
@@ -318,7 +446,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
       local notice_id = field:match("^view_notice_(%d+)$")
 
       if notice_id and value then
-        show_notice(name, tonumber(notice_id))
+        jc_notices.notices.show(name, tonumber(notice_id))
         return
       end
     end
