@@ -138,6 +138,12 @@ local function format_date(timestamp)
   return os.date("%Y-%m-%d %H:%M", timestamp)
 end
 
+local function supports_area_labels(name)
+  local info = core.get_player_information(name)
+
+  return info and (info.formspec_version or 0) >= 9
+end
+
 local function show_notice_formspec(name, notice, title, description)
   local formspec = {
     "formspec_version[6]",
@@ -296,14 +302,16 @@ end
 local function show_notices(name)
   local notices = get_all_notices()
   local can_edit = has_server_priv(name)
+  local use_area_labels = supports_area_labels(name)
+
   local row_height = 1.0
   local scroll_height = 5.8
   local scroll_max = math.max(0, math.ceil((#notices * row_height) - scroll_height))
 
   local formspec =
-    "formspec_version[6]"
+    "formspec_version[" .. (use_area_labels and "9" or "6") .. "]"
     .. "size[12,8]"
-    .. "label[0.5,0.4;" .. ESC( S("Notices") ) .. "]"
+    .. "label[0.5,0.4;" .. ESC(S("Notices")) .. "]"
     .. "box[0.4,1.0;11.2,5.9;#111111]"
     .. "scroll_container[0.6,1.2;10.8,5.5;notices_scroll;vertical;1]"
 
@@ -313,24 +321,36 @@ local function show_notices(name)
       local title = notice.title or ""
       local date = format_date(notice.created or 0)
 
+      local label_text = ESC(
+        core.colorize("#FFFF00", date) .. " - " .. title
+      )
+
+      if use_area_labels then
+        formspec = formspec ..
+          "label[0.2," .. y .. ";7.2,0.7;" .. label_text .. "]"
+      else
+        formspec = formspec ..
+          "label[0.2," .. y .. ";" .. label_text .. "]"
+      end
+
       formspec = formspec ..
-        "label[0.2," .. y .. ";7.2,0.7;" .. ESC(core.colorize("#FFFF00", date ) .. " - " .. title ) .. "]" ..
-        "button[7.7," .. (y - 0.08) .. ";2.6,0.6;view_notice_" .. notice.id .. ";" .. ESC( S("View Notice") ) .. "]"
+        "button[7.7," .. (y - 0.08) .. ";2.6,0.6;view_notice_" ..
+        notice.id .. ";" .. ESC(S("View Notice")) .. "]"
     end
   else
     formspec = formspec
-      .. "label[0.2,0.2;" .. ESC( S("There are no notices.") ) .. "]"
+      .. "label[0.2,0.2;" .. ESC(S("There are no notices.")) .. "]"
   end
 
   formspec = formspec
     .. "scroll_container_end[]"
     .. "scrollbaroptions[min=0;max=" .. scroll_max .. ";smallstep=1;largestep=3]"
     .. "scrollbar[11.1,1.05;0.4,5.8;vertical;notices_scroll;0]"
-    .. "button_exit[9.3,7.1;2.5,0.8;notice_close;" .. ESC( S("Close") ) .. "]"
+    .. "button_exit[9.3,7.1;2.5,0.8;notice_close;" .. ESC(S("Close")) .. "]"
 
   if can_edit then
     formspec = formspec ..
-      "button[0.5,7.1;2.5,0.8;notice_add;" .. ESC( S("Add Notice") ) .. "]"
+      "button[0.5,7.1;2.5,0.8;notice_add;" .. ESC(S("Add Notice")) .. "]"
   end
 
   core.show_formspec(name, "jc_notices:notices", formspec)
